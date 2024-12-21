@@ -1,0 +1,83 @@
+/* Gaya untuk body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+/* Heading */
+h1 {
+    font-size: 32px;
+    color: #0d6efd;
+    text-align: center;
+    margin-top: 20px;
+}
+
+h2 {
+    font-size: 18px;
+    color: #6c757d;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Card container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Card style */
+.card {
+    border: 1px solid #dee2e6;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border-radius: 8px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Card title */
+.card-title {
+    font-size: 20px;
+    color: #0d6efd;
+    margin-bottom: 15px;
+}
+
+/* Card text */
+.card-text {
+    font-size: 14px;
+    color: #6c757d;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+/* Button style */
+.btn {
+    font-size: 14px;
+    padding: 8px 16px;
+    text-transform: uppercase;
+    border-radius: 4px;
+}
+
+.btn-primary {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #0b5ed7;
+    border-color: #0a58ca;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .card {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}

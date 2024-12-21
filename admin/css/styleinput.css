@@ -1,0 +1,98 @@
+/* Gaya untuk body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Gaya untuk heading */
+h2 {
+    font-size: 24px;
+    color: #4CAF50;
+    margin-bottom: 10px;
+}
+
+/* Garis horizontal */
+hr {
+    border: 0;
+    border-top: 2px solid #4CAF50;
+    align-items: center;
+}
+
+/* Gaya untuk form */
+form {
+    width: 600px;
+    margin: auto;
+    padding: 20px;
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Label */
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: inline-block;
+}
+
+/* Input fields */
+input[type="text"],
+select {
+    width: 100%;
+    padding: 8px;
+    margin: 8px 0 16px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
+}
+
+/* Button styles */
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Button primary */
+button.btn-primary {
+    background-color: #4CAF50;
+    color: white;
+}
+
+button.btn-primary:hover {
+    background-color: #45a049;
+}
+
+/* Button warning */
+button.btn-warning {
+    background-color: #f0ad4e;
+    color: white;
+}
+
+button.btn-warning:hover {
+    background-color: #ec971f;
+}
+
+/* Row styling */
+.mb-3 {
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.col-sm-2 {
+    flex: 0 0 25%;
+    max-width: 25%;
+}
+
+.col-sm-4 {
+    flex: 0 0 75%;
+    max-width: 75%;
+}

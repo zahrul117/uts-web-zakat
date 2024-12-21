@@ -1,0 +1,61 @@
+/* Sidebar Styling */
+.sidebar {
+    background-color: #343a40; /* Dark gray */
+    color: white;
+    height: 100vh; /* Full height */
+    position: fixed; /* Fixed on the left */
+    top: 0;
+    left: 0;
+    width: 250px; /* Sidebar width */
+    overflow-y: auto; /* Allow scrolling if content overflows */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+    z-index: 1000; /* Ensure sidebar is above other elements */
+}
+
+.sidebar h3 {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.sidebar .nav-link {
+    font-size: 16px;
+    padding: 10px 20px;
+    color: white;
+    border-radius: 5px; /* Rounded corners for links */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover effect */
+}
+
+.sidebar .nav-link:hover {
+    background-color: #495057; /* Slightly lighter gray */
+    color: #fff; /* Keep text white */
+}
+
+.sidebar .dropdown-menu {
+    background-color: #495057; /* Match sidebar hover color */
+    border: none;
+}
+
+.sidebar .dropdown-item {
+    color: white;
+}
+
+.sidebar .dropdown-item:hover {
+    background-color: #6c757d; /* Slightly lighter hover color */
+}
+
+/* Responsive Design for Sidebar */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 200px; /* Reduce sidebar width on smaller screens */
+    }
+}
+
+@media (max-width: 576px) {
+    .sidebar {
+        width: 100%; /* Make sidebar full width */
+        position: relative; /* Adjust positioning */
+        height: auto; /* Allow content to determine height */
+    }
+}

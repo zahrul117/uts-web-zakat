@@ -1,0 +1,100 @@
+/* Gaya untuk body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+/* Heading */
+h2 {
+    font-size: 28px;
+    color: #0d6efd;
+    margin-left: 45px;
+    margin-bottom: 10px;
+    margin-top: 30px;
+}
+
+/* Horizontal line */
+hr {
+    border: 0;
+    border-top: 2px solid #0d6efd;
+    margin-left: 45px;
+    margin-bottom: 20px;
+}
+
+/* Tombol */
+.btn {
+    font-size: 14px;
+    padding: 8px 16px;
+    text-transform: uppercase;
+    border-radius: 4px;
+}
+
+.btn-primary {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #0b5ed7;
+    border-color: #0a58ca;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    color: white;
+}
+
+.btn-danger:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+}
+
+/* Tabel */
+.table {
+    margin: 20px auto;
+    width: 95%;
+    border: 1px solid #dee2e6;
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.table th,
+.table td {
+    padding: 12px 15px;
+    text-align: left;
+    border: 1px solid #dee2e6;
+}
+
+.table th {
+    background-color: #0d6efd;
+    color: white;
+    font-weight: bold;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f2f2f2;
+}
+
+.table-striped tbody tr:hover {
+    background-color: #e9ecef;
+    cursor: pointer;
+}
+
+/* Aksi kolom */
+.table tbody td:last-child {
+    text-align: center;
+}
+
+.table tbody td a {
+    margin: 0 5px;
+    text-decoration: none;
+    font-size: 13px;
+}
+.btn-small {
+    font-size: 12px; /* Ukuran font lebih kecil */
+    padding: 6px 12px; /* Padding lebih kecil */
+}
