@@ -18,16 +18,16 @@ if (isset($_POST["submit"])) {
     
         // Redirect berdasarkan kategori
         if ($_POST["kategori"] == "Zakat Penghasilan") {
-            header("Location: zakat_penghasilan.php");
+            header("Location: zakat_penghasilan.php?nama=" . urlencode($nama) . "&kategori=" . urlencode($kategori));
             exit;
         } elseif ($_POST["kategori"] == "Zakat Emas") {
-            header("Location: zakat_emas.php");
+            header("Location: zakat_emas.php?nama=" . urlencode($nama) . "&kategori=" . urlencode($kategori));
             exit;
         } elseif ($_POST["kategori"] == "Zakat Tabungan") {
-            header("Location: zakat_tabungan.php");
+            header("Location: zakat_tabungan.php?nama=" . urlencode($nama) . "&kategori=" . urlencode($kategori));
             exit;
         } elseif ($_POST["kategori"] == "Zakat Perdagangan") {
-            header("Location: zakat_perdagangan.php");
+            header("Location: zakat_perdagangan.php?nama=" . urlencode($nama) . "&kategori=" . urlencode($kategori));
             exit;
         } elseif ($_POST["kategori"] == "Zakat Perusahaan") {
             header("Location: zakat_perusahaan.php");
@@ -36,6 +36,8 @@ if (isset($_POST["submit"])) {
     } else {
         echo "<script>alert('Harap lengkapi semua data!');</script>";
     }
+
+    
 ?>
 
 <!DOCTYPE html>

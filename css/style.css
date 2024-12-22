@@ -62,7 +62,8 @@
 }
 
 .hero-section {
-  background: url(gambar/bg.jpg) no-repeat center;
+  background: url(../gambar/kegiatan1.png) no-repeat center;
+  background-size: cover;
   width: 100%;
 }
 .hero-section::before {

@@ -44,7 +44,7 @@ $ambil = query("SELECT * FROM muzakki");
           <td class="text-center"><?= $data['email']; ?></td>
           <td class="text-center"><?= $data['kategori']; ?></td>
           <td class="text-center"><a class="btn btn-danger btn-small" href="?page=hapus_muzakki&id_muzakki=<?php echo $data['id_muzakki']; ?>" onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')">Hapus</a>
-          <a class="btn btn-primary btn-small">Edit</a>
+          <a class="btn btn-primary btn-small" href="?page=edit_muzakki&id_muzakki=<?= $data['id_muzakki'];?>">Edit</a>
         </td>
         </tr>
         <?php $no++; ?>

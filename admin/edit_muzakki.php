@@ -1,12 +1,16 @@
 <?php
 require 'functions.php';
 
+$id = $_GET['id_muzakki'];
+
+$data = query("SELECT * FROM muzakki where id_muzakki = '$id'")[0];
+
 if(isset($_POST['submit'])){
-  if(tambahMuzakki($_POST) > 0 ){
-    echo "<script>alert('Data Berhasil Disimpan');</script>";
+  if(editMuzakki($_POST) > 0 ){
+    echo "<script>alert('Data Berhasil Diubah');</script>";
     echo "<script>document.location.href = '?page=tampil_muzaki'</script>";
   } else{
-    echo "<script>alert('Data Gagal Disimpan');</script>";
+    echo "<script>alert('Data Gagal Diubah');</script>";
     echo "<script>document.location.href = '?page=tampil_muzaki'</script>";
   }
 }
@@ -23,22 +27,23 @@ if(isset($_POST['submit'])){
 </head>
 
 <body>
-  <h2 class="text-center">Form Tambah Pembayar</h2><hr width="800">
+  <h2 class="text-center">Form Edit Pembayar</h2><hr width="800">
     <form id="form1" method="post" name="form1" action="" enctype="multipart/form-data">
         <!--Untuk Nama lengkap -->
+        <input type="hidden" name="id" value="<?= $data['id_muzakki'] ?>">
         <div class="mb-3 row">
     <label for="nama" class="col-sm-2 col-form-label">Nama Lengkap</label>
     <div class="col-sm-4">
-      <input type="text" class="form-control" id="nama" name=nama required>
+      <input type="text" class="form-control" id="nama" name=nama required value="<?= $data['nama_lengkap'] ?>">
     </div>
   </div>
         <!-- Untuk Jenis Kelamin -->
         <div class="mb-3 row">
          <label for="jk" class="col-sm-2 col-form-label">Jenis Kelamin</label>
          <div class="col-sm-4">
-         <select name="jk" id="jk">
-          <option value="Laki-laki">Laki-Laki</option>
-          <option value="Perempuan">Perempuan</option>
+         <select name="jk" id="jk" value="<?= $data['jenis_kelamin'] ?>">
+          <option>Laki-Laki</option>
+          <option>Perempuan</option>
          </select>
          </div>
         </div>
@@ -48,7 +53,7 @@ if(isset($_POST['submit'])){
     <div class="mb-3 row">
     <label for="alamat" class="col-sm-2 col-form-label">Alamat</label>
     <div class="col-sm-4">
-      <input type="text" class="form-control" id="alamat" name=alamat required>
+      <input type="text" class="form-control" id="alamat" name=alamat required value="<?= $data['alamat'] ?>">
     </div>
   </div>
 
@@ -56,7 +61,7 @@ if(isset($_POST['submit'])){
         <div class="mb-3 row">
     <label for="nohp" class="col-sm-2 col-form-label">No. Handphone</label>
     <div class="col-sm-4">
-      <input type="text" class="form-control" id="nohp" name=nohp required>
+      <input type="text" class="form-control" id="nohp" name=nohp required value="<?= $data['nomor'] ?>">
     </div>
   </div>
 
@@ -64,7 +69,7 @@ if(isset($_POST['submit'])){
    <div class="mb-3 row">
     <label for="email" class="col-sm-2 col-form-label">Email</label>
     <div class="col-sm-4">
-      <input type="email" class="form-control" id="email" name=email required>
+      <input type="email" class="form-control" id="email" name=email required value="<?= $data['email'] ?>">
     </div>
   </div>
 
@@ -72,12 +77,14 @@ if(isset($_POST['submit'])){
         <div class="mb-3 row">
          <label for="kategori" class="col-sm-2 col-form-label">Kategori</label>
          <div class="col-sm-4">
-         <select name="kategori" id="kategori">
-          <option value="Zakat Penghasilan">Zakat Penghasilan</option>
-          <option value="Zakat Emas">Zakat Emas</option>
-          <option value="Zakat Tabungan">Zakat Tabungan</option>
-          <option value="Zakat Perdagangan">Zakat Perdagangan</option>
-          <option value="Zakat Perusahaan">Zakat Perusahaan</option>
+         <select name="kategori" id="kategori" value="<?= $data['kategori'] ?>">
+          <optgroup label="Kategori Zakat">
+          <option>Zakat Penghasilan</option>
+          <option>Zakat Emas</option>
+          <option>Zakat Tabungan</option>
+          <option>Zakat Perdagangan</option>
+          <option>Zakat Perusahaan</option>
+          </optgroup>
          </select>
          </div>
         </div>
@@ -87,7 +94,7 @@ if(isset($_POST['submit'])){
     <label for="button" class="col-sm-2 col-form-label"></label>
     <div class="col-sm-4">
         
-       <button type="submit" name="submit" class="btn btn-primary">Simpan!</button> 
+       <button type="submit" name="submit" class="btn btn-primary">Edit!</button> 
         
      <a href="?page=tampil_muzaki"><button type="button" class="btn btn-warning" href=>Back</button></a>
     </div>

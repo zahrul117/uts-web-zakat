@@ -26,7 +26,7 @@ function tambahMuzakki($data){
     $simpan = "INSERT INTO muzakki (id_muzakki,nama_lengkap,jenis_kelamin,alamat,nomor,email,kategori)
     VALUES
     ('','$nama','$jk','$alamat','$nohp','$email','$kategori')
-";
+    ";
     mysqli_query($konek,$simpan);
     return mysqli_affected_rows($konek);
 }
@@ -91,6 +91,27 @@ function hapusAmil($id){
     return mysqli_affected_rows($konek);
 }
 
+// function untuk mengedit data muzakki
+function editMuzakki($data){
+    global $konek;
+    $id = $data['id'];
+    $nama = htmlspecialchars($data['nama']);
+    $jk = htmlspecialchars($data['jk']);
+    $alamat = htmlspecialchars($data['alamat']);
+    $nohp = htmlspecialchars($data['nohp']);
+    $email = htmlspecialchars($data['email']);
+    $kategori = htmlspecialchars($data['kategori']);
 
-
+    $simpan = "UPDATE muzakki set 
+        nama_lengkap = '$nama',
+        jenis_kelamin = '$jk',
+        alamat = '$alamat',
+        nomor = '$nohp',
+        email = '$email',
+        kategori = '$kategori'
+        WHERE id_muzakki = $id 
+        ";
+        mysqli_query($konek,$simpan);
+        return mysqli_affected_rows($konek);
+}
 ?>

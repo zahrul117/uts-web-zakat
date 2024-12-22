@@ -39,7 +39,9 @@ $ambil = query("SELECT * FROM mustahik");
             <td class="text-center"><?= $data['alamat'];?></td>
             <td class="text-center"><?= $data['nomor'];?></td>
             <td class="text-center"><?= $data['kategori'];?></td>
-            <td class="text-center"><a class="btn btn-danger" href="?page=hapus_mustahik&id_mustahik=<?php echo $data['id_mustahik']; ?>" onclick="return confirm ('Yakin ingin menghapus data?')">Hapus</a><a class="btn btn-primary" >Edit</a></td>
+            <td class="text-center">
+            <a class="btn btn-danger" href="?page=hapus_mustahik&id_mustahik=<?php echo $data['id_mustahik']; ?>" onclick="return confirm ('Yakin ingin menghapus data?')">Hapus</a>
+            <a class="btn btn-primary" >Edit</a></td>
             
 
         </tr>

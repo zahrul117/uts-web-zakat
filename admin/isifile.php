@@ -22,6 +22,9 @@
         elseif($page=='hapus_muzakki') {
             include "hapus_muzakki.php";
         }
+        elseif($page=='edit_muzakki'){
+            include "edit_muzakki.php";
+        }
         //untuk mustahik
         elseif($page=='tampil_mustahik') {
             include "tampil_mustahik.php";
