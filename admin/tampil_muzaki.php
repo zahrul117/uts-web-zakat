@@ -3,6 +3,11 @@ include 'functions.php';
 
 $ambil = query("SELECT * FROM muzakki");
 
+if(isset($_POST['cari'])){
+  $ambil = cariMuzakki($_POST['keyword']);
+}
+
+
 ?>
 
 <!DOCTYPE html>
@@ -18,6 +23,18 @@ $ambil = query("SELECT * FROM muzakki");
 <h2 class="ms-5">Tabel Data Pembayar</h2>
     <hr align="left" width="400">
     <a class="btn btn-primary mb-3" style="margin-left: 45px;" href="?page=input_muzakki" role="button">Tambah Data Pembayar</a>
+    <form method="post" action="" class="d-flex justify-content-start ms-5 mb-3">
+    <input 
+        class="form-control me-2" 
+        type="search" 
+        name="keyword" 
+        placeholder="Cari nama pembayar..." 
+        aria-label="Search" 
+        style="max-width: 300px;"
+        autofocus
+        autocomplete="off">
+    <button class="btn btn-outline-primary" type="submit" name="cari">Cari</button>
+</form>
     <table width="100%" border="0" cellspacing="0" cellpadding="0" class="table table-striped">
       <tbody>
         <tr>

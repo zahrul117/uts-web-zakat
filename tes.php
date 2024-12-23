@@ -30,7 +30,7 @@ if (isset($_POST["submit"])) {
             header("Location: zakat_perdagangan.php?nama=" . urlencode($nama) . "&kategori=" . urlencode($kategori));
             exit;
         } elseif ($_POST["kategori"] == "Zakat Perusahaan") {
-            header("Location: zakat_perusahaan.php");
+            header("Location: zakat_perusahaan.php?nama=" . urlencode($nama) . "&kategori=" . urlencode($kategori));
             exit;
         }
     } else {

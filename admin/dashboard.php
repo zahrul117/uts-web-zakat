@@ -40,6 +40,9 @@
                     <a href="#kelola-user" class="nav-link text-white"><i class="bi bi-people me-2"></i> Kelola Admin</a>
                 </li>
                 <li class="nav-item">
+                    <a href="#laporan" class="nav-link text-white"><i class="bi bi-bar-chart me-2"></i> Pembayaran Zakat</a>
+                </li>
+                <li class="nav-item">
                     <a href="#laporan" class="nav-link text-white"><i class="bi bi-bar-chart me-2"></i> Laporan</a>
                 </li>
                 <li class="nav-item">

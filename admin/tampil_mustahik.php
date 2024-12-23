@@ -31,9 +31,10 @@ $ambil = query("SELECT * FROM mustahik");
           <th class="text-center">Kategori</th>
           <th class="text-center">Aksi</th>
     </tr>
+    <?php $no = 1 ?>
     <?php foreach($ambil as $data):?>
         <tr>
-            <td class="text-center">1</td>
+            <td class="text-center"><?= $no ?></td>
             <td class="text-center"><?php echo $data['nama_lengkap'];?></td>
             <td class="text-center"><?= $data['jenis_kelamin'];?></td>
             <td class="text-center"><?= $data['alamat'];?></td>
@@ -41,11 +42,11 @@ $ambil = query("SELECT * FROM mustahik");
             <td class="text-center"><?= $data['kategori'];?></td>
             <td class="text-center">
             <a class="btn btn-danger" href="?page=hapus_mustahik&id_mustahik=<?php echo $data['id_mustahik']; ?>" onclick="return confirm ('Yakin ingin menghapus data?')">Hapus</a>
-            <a class="btn btn-primary" >Edit</a></td>
+            <a class="btn btn-primary" href="?page=edit_mustahik&id_mustahik=<?= $data['id_mustahik']?>`">Edit</a></td>
             
 
         </tr>
-
+        <?php $no++ ?>
     <?php endforeach;?>
     </table>
     </div>

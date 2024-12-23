@@ -114,4 +114,41 @@ function editMuzakki($data){
         mysqli_query($konek,$simpan);
         return mysqli_affected_rows($konek);
 }
+
+// function untuk mengedit data mustahik
+function editMustahik($data){
+    global $konek;
+    $id = $data['id'];
+    $nama = htmlspecialchars($data['nama']);
+    $jk = htmlspecialchars($data['jk']);
+    $alamat = htmlspecialchars($data['alamat']);
+    $nohp   = htmlspecialchars($data ['nohp']);
+    $kategori = htmlspecialchars($data ['kategori']);
+
+    $simpan = "UPDATE mustahik set 
+    nama_lengkap = '$nama',
+    jenis_kelamin = '$jk',
+    alamat = '$alamat',
+    nomor = '$nohp',
+    kategori = '$kategori'
+
+    WHERE id_mustahik = $id
+    ";
+    mysqli_query($konek,$simpan);
+    return mysqli_affected_rows($konek);
+
+}
+
+
+// function untuk mencari data muzakki
+function cariMuzakki($keyword){
+    $query = "SELECT * FROM muzakki 
+    WHERE
+    nama_lengkap like '%$keyword%' or
+    jenis_kelamin like '%$keyword%'
+    
+    ";
+
+    return query($query);
+}
 ?>

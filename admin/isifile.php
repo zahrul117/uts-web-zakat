@@ -35,6 +35,9 @@
         elseif($page=='hapus_mustahik') {
             include "hapus_mustahik.php";
         }
+        elseif($page=='edit_mustahik'){
+            include "edit_mustahik.php";
+        }
         //untuk amil
         elseif($page=='tampil_amil'){
             include "tampil_amil.php";
@@ -44,6 +47,9 @@
         }
         elseif($page=='hapus_amil'){
             include "hapus_amil.php";
+        }
+        elseif($page=='edit_amil'){
+            include "edit_amil.php";
         }
     }else {
         include "home.php";

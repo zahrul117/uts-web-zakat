@@ -98,3 +98,9 @@ hr {
     font-size: 12px; /* Ukuran font lebih kecil */
     padding: 6px 12px; /* Padding lebih kecil */
 }
+form input[type="search"] {
+    border-radius: 8px;
+}
+form button {
+    border-radius: 8px;
+}

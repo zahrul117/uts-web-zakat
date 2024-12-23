@@ -60,7 +60,7 @@ if(isset($_POST['submit'])){
                         <input type="text" id="hasil_zakat" name="hasil_zakat" class="form-control" readonly>
                     </div>
                     <button type="submit" class="btn btn-primary w-100">Hitung Zakat</button>
-                    <button type="submit" class="btn btn-primary w-100 mt-4" name="submit">Kirim Data</button>
+                    <button type="submit" class="btn btn-primary w-100" name="submit">Kirim Data</button>
                 </form>
             </div>
         </div>
