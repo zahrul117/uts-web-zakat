@@ -51,6 +51,29 @@
         elseif($page=='edit_amil'){
             include "edit_amil.php";
         }
+        // untuk pembayaran
+        elseif($page=='tampil_pembayaran'){
+            include "tampil_pembayaran.php";
+        }
+        elseif($page=='hapus_pembayaran'){
+            include "hapus_pembayaran.php";
+        }
+        elseif($page=='edit_pembayaran'){
+            include "edit_pembayaran.php";
+        }
+        // untuk penerima
+        elseif($page=='tampil_penyaluran'){
+            include "tampil_penyaluran.php";
+        }
+        elseif($page=='input_penyaluran'){
+            include "input_penyaluran.php";
+        }
+        elseif($page=='hapus_penyaluran'){
+            include "hapus_penyaluran.php";
+        }
+        elseif($page=='edit_penyaluran'){
+            include "edit_penyaluran.php";
+        }
     }else {
         include "home.php";
     }

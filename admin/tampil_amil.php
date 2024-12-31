@@ -39,7 +39,7 @@ $ambil = query("SELECT * FROM amilzakat");
                 <td class="text-center"><?= $data['no_hp'];?></td>
                 <td class="text-center"><?= $data['alamat'];?></td>
                 <td class="text-center"><a class="btn btn-danger" href="?page=hapus_amil&id_amil=<?php echo $data['id_amil']; ?>" onclick="return confirm('Yakin Menghapus Data ini?')">Hapus</a> | 
-            <a class="btn btn-primary" >Edit</a>
+            <a class="btn btn-primary" href="?page=edit_amil&id_amil=<?= $data['id_amil'];?>">Edit</a>
         </td>
             </tr>
 

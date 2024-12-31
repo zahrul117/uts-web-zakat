@@ -40,7 +40,7 @@ $ambil = query("SELECT * FROM mustahik");
             <td class="text-center"><?= $data['alamat'];?></td>
             <td class="text-center"><?= $data['nomor'];?></td>
             <td class="text-center"><?= $data['kategori'];?></td>
-            <td class="text-center">
+            <td class="text-center" width="25%">
             <a class="btn btn-danger" href="?page=hapus_mustahik&id_mustahik=<?php echo $data['id_mustahik']; ?>" onclick="return confirm ('Yakin ingin menghapus data?')">Hapus</a>
             <a class="btn btn-primary" href="?page=edit_mustahik&id_mustahik=<?= $data['id_mustahik']?>`">Edit</a></td>
             

@@ -1,4 +1,5 @@
 <?php
+session_start();
 $konek = mysqli_connect('localhost','root','','dbzakat_uts');
 
 if (isset($_POST["submit"])) {
@@ -10,11 +11,19 @@ if (isset($_POST["submit"])) {
         $email=$_POST['email'];
         $kategori = $_POST['kategori'];
 
-        // Query simpan data ke database
-        $simpan = "INSERT INTO muzakki (id_muzakki,nama_lengkap, jenis_kelamin, alamat, nomor, email,kategori) 
-                   VALUES ('','$nama', '$jk', '$alamat', '$nomor', '$email','$kategori')";
+        // simpan data ke session
+        $_SESSION['nama'] = $nama;
+        $_SESSION['jk'] = $jk;
+        $_SESSION['alamat'] = $alamat;
+        $_SESSION['nomor'] = $nomor;
+        $_SESSION['email'] = $email;
+        $_SESSION['kategori'] = $kategori;
 
-        (mysqli_query($konek, $simpan)); 
+        // // Query simpan data ke database
+        // $simpan = "INSERT INTO muzakki (id_muzakki,nama_lengkap, jenis_kelamin, alamat, nomor, email,kategori) 
+        //            VALUES ('','$nama', '$jk', '$alamat', '$nomor', '$email','$kategori')";
+
+        // (mysqli_query($konek, $simpan)); 
     
         // Redirect berdasarkan kategori
         if ($_POST["kategori"] == "Zakat Penghasilan") {

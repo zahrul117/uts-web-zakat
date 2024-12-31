@@ -1,3 +1,13 @@
+<?php
+session_start();
+
+if(!isset($_SESSION["login"])){
+    header("location:../login.php");
+}
+
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,16 +50,13 @@
                     <a href="#kelola-user" class="nav-link text-white"><i class="bi bi-people me-2"></i> Kelola Admin</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#laporan" class="nav-link text-white"><i class="bi bi-bar-chart me-2"></i> Pembayaran Zakat</a>
+                    <a href="?page=tampil_pembayaran" class="nav-link text-white"><i class="bi bi-bar-chart me-2"></i> Pembayaran Zakat</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#laporan" class="nav-link text-white"><i class="bi bi-bar-chart me-2"></i> Laporan</a>
+                    <a href="?page=tampil_penyaluran" class="nav-link text-white"><i class="bi bi-bar-chart me-2"></i> Penyaluran Zakat</a>
                 </li>
                 <li class="nav-item">
-                    <a href="#pengaturan" class="nav-link text-white"><i class="bi bi-gear me-2"></i> Pengaturan</a>
-                </li>
-                <li class="nav-item">
-                    <a href="#logout" class="nav-link text-white"><i class="bi bi-box-arrow-right me-2"></i> Logout</a>
+                    <a href="../logout.php" class="nav-link text-white"><i class="bi bi-box-arrow-right me-2"></i> Logout</a>
                 </li>
             </ul>
         </nav>

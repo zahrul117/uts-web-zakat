@@ -1,10 +1,28 @@
 <?php
+session_start();
+
 $nama = isset($_GET['nama']) ? htmlspecialchars($_GET['nama']) : '';
 $kategori = isset($_GET['kategori']) ? htmlspecialchars($_GET['kategori']) : '';
+$tanggal_penyerahan = isset($_GET['tanggal_penyerahan']) ? htmlspecialchars($_GET['tanggal_penyerahan']) : '';
+$jumlah_bayar = isset($_GET['jumlah_bayar']) ? htmlspecialchars($_GET['jumlah_bayar']) : '';
+
+$konek = mysqli_connect('localhost','root','','dbzakat_uts');
+
+if(isset($_POST['submit'])){
+    $nama = $_POST['nama'];
+    $kategori = $_POST['kategori'];
+    $tgl_penyerahan = $_POST['tanggal_penyerahan'];
+    $jumlah_bayar = $_POST['hasil_zakat'];
+
+    // simpan data ke session
+    $_SESSION['nama'] = $nama;
+    $_SESSION['kategori'] = $kategori;
+    $_SESSION['tanggal_penyerahan'] = $tanggal_penyerahan;
+    $_SESSION['jumlah_bayar'] = $jumlah_bayar;
 
 
-
-
+    echo "<script>location.href='teslagi.php?nama=" . urlencode($nama) . "&kategori=" . urlencode($kategori) . "&tanggal_penyerahan=" . urlencode($tgl_penyerahan) . "&jumlah_bayar=" . urlencode($jumlah_bayar) . "'</script>";
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -48,12 +66,12 @@ $kategori = isset($_GET['kategori']) ? htmlspecialchars($_GET['kategori']) : '';
 
                 <div class="mb-3">
                     <label for="saldo_awal" class="form-label">Tabungan Per Bulan (Rp)</label>
-                    <input type="text" id="saldo_awal" name="saldo_awal" class="form-control" required>
+                    <input type="text" id="saldo_awal" name="saldo_awal" class="form-control" >
                 </div>
 
                 <div class="mb-3">
                     <label for="harga_emas" class="form-label">Harga Emas Saat Ini (Rp/gram)</label>
-                    <input type="text" id="harga_emas" name="harga_emas" class="form-control" required>
+                    <input type="text" id="harga_emas" name="harga_emas" class="form-control" >
                 </div>
                 <div class="mb-3">
                         <label for="tanggal_penyerahan" class="form-label">Tanggal Penyerahan</label>

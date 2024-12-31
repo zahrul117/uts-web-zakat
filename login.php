@@ -1,22 +1,4 @@
-<?php
-// cek tombol submit
-if(isset($_POST["submit"])){
-    // cek username $ password
-    if ($_POST["username"] == "zahrul" && $_POST["password"] == "123"){
 
-    // true/benar
-    header("Location: admin/dashboard.php");
-    exit;
-} else{
-    // salah/false
-    $error = true;
-}
-
-}
-
-?>
-
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -27,17 +9,57 @@ if(isset($_POST["submit"])){
 <body>
     <div class="container">
         <div class="login">
-            <form action="" method="post">
+            <form action="" method="POST">
                 <h1>Login</h1>
                 <hr>
                 <p>Baznas Kab. Muaro Jambi</p>
-                <label for="username">Username : </label>
+                <label>Username : </label>
                 <input type="text" placeholder="masukkan username" name="username">
-                <label for="password">Password : </label>
-                <input type="password" name="password" id="password" placeholder="password">
+                <label>Password : </label>
+                <input type="password" name="password"  placeholder="password">
                 <button type="submit" name="submit">Login</button>
                 <a href="registrasi.php" style="text-decoration: none;"><p>Daftar Amil Zakat</p></a>
             </form>
+
+            <?php 
+
+session_start(); 
+
+if(isset($_SESSION["login"])){
+    header("Location: admin/dashboard.php");
+    exit;
+}
+
+
+$conn = mysqli_connect('localhost','root','','dbzakat_uts'); 
+
+if(isset($_POST['submit'])){
+$username= $_POST ['username'];
+$password= $_POST ['password'];
+
+$sql = "SELECT * FROM admin WHERE username='$username'"; 
+
+$result = $conn->query($sql); 
+if ($result->num_rows > 0) { 
+    
+    $row = mysqli_fetch_assoc($result);
+    password_verify($password, $row["password"]);
+
+    $_SESSION["login"] = true;
+    $_SESSION['username'] = $username; 
+
+ header("Location: admin/dashboard.php"); 
+
+} else { 
+
+ echo "Login gagal. <a href='login.php'>Coba lagi</a>"; 
+
+} 
+
+$conn->close(); 
+}
+?>
+
         </div>
         <div class="kanan">
             <img src="imglogin.jpeg" alt="">

@@ -1,26 +1,31 @@
 <?php
+session_start();
+
 $nama = isset($_GET['nama']) ? htmlspecialchars($_GET['nama']) : '';
 $kategori = isset($_GET['kategori']) ? htmlspecialchars($_GET['kategori']) : '';
+$tanggal_penyerahan = isset($_GET['tanggal_penyerahan']) ? htmlspecialchars($_GET['tanggal_penyerahan']) : '';
+$jumlah_bayar = isset($_GET['jumlah_bayar']) ? htmlspecialchars($_GET['jumlah_bayar']) : '';
 
-$konek= mysqli_connect("localhost","root","","dbzakat_uts");
+$konek = mysqli_connect('localhost','root','','dbzakat_uts');
 
 if(isset($_POST['submit'])){
     $nama = $_POST['nama'];
     $kategori = $_POST['kategori'];
-    $tgl = $_POST['tanggal_penyerahan'];
-    $jumlah = $_POST['hasil_zakat'];
+    $tgl_penyerahan = $_POST['tanggal_penyerahan'];
+    $jumlah_bayar = $_POST['hasil_zakat'];
 
-    $simpan = "INSERT INTO pembayaran
-        (id_pembayaran,nama_pembayar,kategori_zakat,tanggal_penyerahan,total_pembayaran) VALUES
-        ('','$nama','$kategori','$tgl','$jumlah')
-        ";
-
-    mysqli_query($konek,$simpan);
-
+    // simpan data ke session
+    $_SESSION['nama'] = $nama;
+    $_SESSION['kategori'] = $kategori;
+    $_SESSION['tanggal_penyerahan'] = $tanggal_penyerahan;
+    $_SESSION['jumlah_bayar'] = $jumlah_bayar;
 
 
-
+    echo "<script>location.href='teslagi.php?nama=" . urlencode($nama) . "&kategori=" . urlencode($kategori) . "&tanggal_penyerahan=" . urlencode($tgl_penyerahan) . "&jumlah_bayar=" . urlencode($jumlah_bayar) . "'</script>";
 }
+
+
+
 
 
 

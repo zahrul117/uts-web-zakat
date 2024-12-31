@@ -85,7 +85,7 @@ if(isset($_POST['submit'])){
     <label for="button" class="col-sm-2 col-form-label"></label>
     <div class="col-sm-4">
         
-       <button type="submit" name="submit" class="btn btn-primary">Edit!</button> 
+       <button type="submit" name="submit" class="btn btn-primary" onclick="return confirm('Yakin Untuk Mengubah Data Tersebut?');">Edit!</button> 
         
      <a href="?page=tampil_mustahik"><button type="button" class="btn btn-warning" href=>Back</button></a>
     </div>
